@@ -26,6 +26,11 @@ const routes = [
         component: () => import(/* webpackChunkName: "select" */ '@/views/form/Select.vue')
       },
       {
+        path: 'cascader2',
+        name: 'Cascader2',
+        component: () => import(/* webpackChunkName: "cascader2" */ '@/views/form/Cascader2.vue')
+      },
+      {
         path: 'cascader',
         name: 'Cascader',
         component: () => import(/* webpackChunkName: "cascader" */ '@/views/form/Cascader.vue')
@@ -54,6 +59,36 @@ const routes = [
         path: 'pdf2',
         name: 'Pdf2',
         component: () => import(/* webpackChunkName: "pdf2" */ '@/views/pdf/Pdf2.vue')
+      },
+      {
+        path: 'wang-editor',
+        name: 'WangEditor',
+        component: () => import(/* webpackChunkName: "wang-editor" */ '@/views/wang-editor/WangEditor.vue')
+      },
+      {
+        path: 'sku',
+        name: 'Sku',
+        component: () => import(/* webpackChunkName: "sku" */ '@/views/sku/Sku.vue')
+      },
+      {
+        path: 'sku2',
+        name: 'Sku2',
+        component: () => import(/* webpackChunkName: "sku2" */ '@/views/sku/Sku2.vue')
+      },
+      {
+        path: 'ewm',
+        name: 'Ewm',
+        component: () => import(/* webpackChunkName: "ewm" */ '@/views/ewm/Ewm.vue')
+      },
+      {
+        path: 'base-table',
+        name: 'BaseTable',
+        component: () => import(/* webpackChunkName: "base-table" */ '@/views/table/BaseTable.vue')
+      },
+      {
+        path: 'transition',
+        name: 'Transition',
+        component: () => import(/* webpackChunkName: "transition" */ '@/views/transition/Transition.vue')
       }
     ]
   }

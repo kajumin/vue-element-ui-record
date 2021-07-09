@@ -2,18 +2,14 @@
   <div class="show-pdf">
     <div class="tools">
       <el-button
-        :theme="'default'"
         type="submit"
-        :title="'基础按钮'"
         @click.stop="prePage"
         class="mr10"
       >
         上一页</el-button
       >
       <el-button
-        :theme="'default'"
         type="submit"
-        :title="'基础按钮'"
         @click.stop="nextPage"
         class="mr10"
       >
@@ -21,18 +17,14 @@
       >
       <div class="page">{{ pageNum }}/{{ pageTotalNum }}</div>
       <el-button
-        :theme="'default'"
         type="submit"
-        :title="'基础按钮'"
         @click.stop="clock"
         class="mr10"
       >
         顺时针</el-button
       >
       <el-button
-        :theme="'default'"
         type="submit"
-        :title="'基础按钮'"
         @click.stop="counterClock"
         class="mr10"
       >
@@ -63,7 +55,8 @@ export default {
   data() {
     return {
       url:
-        'http://storage.xuetangx.com/public_assets/xuetangx/PDF/PlayerAPI_v1.0.6.pdf',
+        // 'http://storage.xuetangx.com/public_assets/xuetangx/PDF/PlayerAPI_v1.0.6.pdf',
+        'https://photo.feibaos.cn/webs/saas/uploads/property/知识产权维权扶持政策汇编-2021.pdf',
       pageNum: 1,
       pageTotalNum: 1,
       pageRotate: 0,
