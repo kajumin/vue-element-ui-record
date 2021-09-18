@@ -1,0 +1,125 @@
+// z主题颜色
+$colorPrimary: #2988f2;
+$colorDarkBlur: #3045ff;
+$colorPeacockBlue: #33cfc2;
+$coloeLightBlue: #13cee4;
+$colorOpcityBlue: #e8feff;
+$colorBlack: #333333;
+$colorWhite: #ffffff;
+$colorPlain: #f3faff;
+$colorGrey: #999999;
+$colorGray: #666666;
+$colorBorder: #dddddd;
+$colorLightGrey: #f4faff;
+$colorRed: #ff3a3a;
+$colorPink: #ff2b6b;
+$colorOpcityPink: #fff5f8;
+$colorGreen: #4cd964;
+$colorYellow: #fcf448;
+$colorOrange: #ffb618;
+$colorDarkOrange: #ff8e3a;
+$colorOpcityOrange: #fff8f3;
+$colorOpcityPurple: #f5f6ff;
+$colorPolicyRed: #ff7575;
+$colorPolicyYellow: #ffc23f;
+$colorPolicyBlue: #3e97f9;
+$colorPolicyGreen: #72daca;
+$colorPolicyPurple: #d287ff;
+
+// 字体
+$fontFamilyBold: PingFang-SC-Bold;
+$fontFamilyMedium: PingFang-SC-Medium;
+
+$fontSizeMini: 12px;
+$fontSizeSmall: 20px;
+$fontSizeLittle: 22px;
+$fontSizeDefault: 24px;
+$fontSizeMedium: 26px;
+$fontSizeBig: 28px;
+$fontSizeLarge: 32px;
+$fontSizeOversized: 38px;
+
+$fontWeightLighter: lighter;
+$fontWeightDefault: normal;
+$fontWeightBold: bold;
+$fontWeightBolder: bolder;
+
+$fontStyleDefault: normal;
+$fontStyleItalic: italic;
+$fontStyleOblique: oblique;	
+
+// 边距
+$spaceMini: 5px;
+$spaceSmall: 10px;
+$spaceMedium: 15px;
+$spaceDefault: 20px;
+$spaceLarge: 30px;
+$spaceOverSize: 40px;
+
+// 图片尺寸
+$imgSizeSmall: 40px;
+$imgSizeDefault: 50px;
+$imgSizeLarge: 80px;
+
+// 圆角
+$borderRadiusSmall: 4px;
+$borderRadiusDefaule: 10px;
+$borderRadiusLarge: 12px;
+$borderRadiusCircle: 50%;
+
+$font-size: ('text-xs': $fontSizeMini, 'text-sm': $fontSizeSmall, 'text-lt': $fontSizeLittle, 'text-df': $fontSizeDefault, 'text-md': $fontSizeMedium, 'text-big': $fontSizeBig, 'text-lg': $fontSizeLarge, 'text-os': $fontSizeOversized);
+@each $key, $value in $font-size {
+  .#{$key} {
+    font-size: $value;
+  }
+}
+
+$margin-padding: ('xs': $spaceMini, 'sm': $spaceSmall, 'md': $spaceMedium, 'df': $spaceDefault, 'lg': $spaceLarge, 'os': $spaceOverSize);
+@each $key, $value in $margin-padding {
+  .margin-#{$key} {
+    margin: $value;
+  }
+  .margin-top-#{$key} {
+    margin-top: $value;
+  }
+  .margin-bottom-#{$key} {
+    margin-bottom: $value;
+  }
+  .margin-left-#{$key} {
+    margin-left: $value;
+  }
+  .margin-right-#{$key} {
+    margin-right: $value;
+  }
+  .margin-lr-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .margin-tb-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .padding-#{$key} {
+    padding: $value;
+  }
+  .padding-top-#{$key} {
+    padding-top: $value;
+  }
+  .padding-bottom-#{$key} {
+    padding-bottom: $value;
+  }
+  .padding-left-#{$key} {
+    padding-left: $value;
+  }
+  .padding-right-#{$key} {
+    padding-right: $value;
+  }
+  .padding-lr-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .padding-tb-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}

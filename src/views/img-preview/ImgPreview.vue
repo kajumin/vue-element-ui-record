@@ -8,7 +8,6 @@
   </div>
 </template>
 <script>
-import imgPreview from '@/components/ImgPreview/index.js'
 export default {
   data() {
     return {
@@ -35,7 +34,7 @@ export default {
   methods: {
     handlePreview(imgs) {
       console.log(imgs)
-      imgPreview.$imgPreview(imgs)
+      this.$createPreview(imgs)
     }
   }
 }

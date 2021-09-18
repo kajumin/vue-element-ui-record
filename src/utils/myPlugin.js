@@ -20,7 +20,8 @@ import {
   Tag,
   CascaderPanel,
   Pagination,
-  Message
+  Message,
+  empty
 } from 'element-ui'
 import NoData from '@/components/no-data/NoData.vue'
 import MPagination from '@/components/pagination/Pagination.vue'
@@ -47,6 +48,7 @@ export default {
     Vue.component(Checkbox.name, Checkbox)
     Vue.component(Tag.name, Tag)
     Vue.component(Pagination.name, Pagination)
+    Vue.component(empty.name, empty)
     Vue.component(CascaderPanel.name, CascaderPanel)
     Vue.prototype.$message = Message
     // 自定义组件

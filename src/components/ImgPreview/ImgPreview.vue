@@ -1,5 +1,5 @@
 <template>
-  <el-dialog :visible.sync="isShowImageDialog" @closed="clearImg">
+  <el-dialog :visible.sync="isShowImageDialog" @close="handleClose">
     <el-carousel indicator-position="outside" height="600px">
       <el-carousel-item v-for="src in imgs" :key="src">
         <img
@@ -14,15 +14,20 @@
 <script>
 export default {
   name: 'ImgPreview',
+  props: ['imgs', 'isShow'],
   data() {
     return {
-      imgs: '',
-      isShowImageDialog: false
+      isShowImageDialog: this.isShow
     }
   },
+  // created() {
+  //   console.log('created', this.imgs)
+  // },
   methods: {
-    clearImg() {
-      this.imgs = null
+    handleClose() {
+      // 销毁组件, 移除dom元素
+      this.$destroy()
+      document.body.removeChild(this.$el)
     }
   }
 }

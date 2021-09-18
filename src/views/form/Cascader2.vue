@@ -11,6 +11,8 @@
     <el-button @click="handleClick">清除</el-button>
 
     <div>{{Compute1(value)}}</div>
+    <div>{{Compute1(value)}}</div>
+    <div><el-button @click="handleChangeValue">测试computed使用函数</el-button></div>
   </div>
 </template>
 <script>
@@ -50,6 +52,9 @@ export default {
     },
     handleInput() {
       console.log('input')
+    },
+    handleChangeValue() {
+      this.value = 2
     }
   }
 }

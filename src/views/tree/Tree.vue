@@ -1,22 +1,28 @@
 <template>
   <div>
     <el-tree
+      ref="tree"
       :data="data"
       show-checkbox
       node-key="id"
-      :default-expanded-keys="[1, 2]"
+      :default-expand-all="true"
       :default-checked-keys="defaultData"
       :props="defaultProps"
     >
     </el-tree>
-    <div><button @click="handleChange">改变</button></div>
+    <div><el-button @click="clearTree">清空</el-button><el-button @click="addTree">添加</el-button><el-button @click="getTree">获取</el-button></div>
+    <!--
+      1.清空tree 通过this.$refs.tree.setCheckedKeys([])
+      2.获取半选择状态的keys this.$refs.tree.getHalfCheckedKeys()
+
+     -->
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      defaultData: [7, 8],
+      defaultData: [],
       data: [
         {
           id: 1,
@@ -73,9 +79,23 @@ export default {
       }
     }
   },
+  created() {
+    setTimeout(() => {
+      this.defaultData = [7, 8]
+    }, 300)
+  },
   methods: {
-    handleChange() {
-      this.defaultData = [4, 5]
+    clearTree() {
+      this.defaultData = []
+      this.$refs.tree.setCheckedKeys([])
+    },
+    addTree() {
+      this.defaultData = [5, 6]
+      this.$refs.tree.setCheckedKeys([5, 6])
+    },
+    getTree() {
+      console.log(this.$refs.tree.getHalfCheckedKeys())
+      console.log(this.defaultData)
     }
   }
 }

@@ -2,3 +2,30 @@
   overflow-x: auto;
   height: 250px;
 }
+
+.clear-number-input.el-input::-webkit-outer-spin-button,
+.clear-number-input.el-input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none !important;
+}
+.clear-number-input.el-input input[type='number']::-webkit-outer-spin-button,
+.clear-number-input.el-input input[type='number']::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none !important;
+}
+.clear-number-input.el-input {
+  -moz-appearance: textfield;
+}
+.clear-number-input.el-input input[type='number'] {
+  -moz-appearance: textfield;
+}
+// 根据条件高亮
+.el-table .highlight {
+  background-color: #b6e8fe;
+  &:hover > td {
+    background-color: initial !important;
+  }
+  td {
+    background-color: initial !important;
+  }
+}

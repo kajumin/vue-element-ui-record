@@ -1,16 +1,18 @@
 import Vue from 'vue'
 import ImgPreviewComponent from './ImgPreview.vue'
 
-const ImgConstructor = Vue.extend(ImgPreviewComponent)
-const instance = new ImgConstructor()
+const createPreview = function(imgs) {
+  const ImgConstructor = Vue.extend(ImgPreviewComponent)
+  // propData 传递props数据
+  const instance = new ImgConstructor({
+    propsData: {
+      imgs,
+      isShow: true
+    }
+  }).$mount()
 
-instance.$mount(document.createElement('div'))
-
-document.body.appendChild(instance.$el)
-
-instance.$imgPreview = (imgs) => {
-  instance.imgs = imgs
-  instance.isShowImageDialog = true
+  document.body.appendChild(instance.$el)
+  return instance
 }
 
-export default instance
+export default createPreview

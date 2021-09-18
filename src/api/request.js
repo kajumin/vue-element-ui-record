@@ -15,6 +15,8 @@ service.interceptors.request.use(
     // console.log(config)
     // loading + 1
     // store.dispatch('SetLoading', true)
+    config.headers['x-app-domain'] = 'srcm.enterprise.web.dev.feibaos.cn'
+    config.headers['x-access-token'] = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkZWZhdWx0XzYwOTY4NzhmMTg5MGMyNTdlMjcxNWNlMiIsImlhdCI6MTYyOTA5NTQ5OCwibmJmIjoxNjI5MDk1NDk4LCJleHAiOjE2MjkxODE4OTgsImFwcF9pZCI6IjYwOTY4NzhmY2QwNGYyNWY1YjBkZDU5OCIsInVzZXJfaWQiOiI2MDk2ODc4ZjE4OTBjMjU3ZTI3MTVjZTIiLCJ1c2VybmFtZSI6ImFkbWluIiwibW9iaWxlIjoiMTUyMTc2MTExNzYiLCJhY2NvdW50X3R5cGUiOiJhcHBfYWRtaW4iLCJqd3Rfc2NlbmUiOiJkZWZhdWx0In0.BfofFxhoohn0WDT08z1cc4CFDcFBGoLtmicpeC92jJM'
     return config
   },
   error => {

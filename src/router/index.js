@@ -10,6 +10,18 @@ const routes = [
     redirect: { name: 'ElementUI' }
   },
   {
+    path: '/form',
+    name: 'Form',
+    component: () => import(/* webpackChunkName: "element-ui" */ '@/views/ElementUI.vue'),
+    children: [
+      {
+        path: 'form-default-action',
+        name: 'FormDefaultAction',
+        component: () => import(/* webpackChunkName: "form-default-action" */ '@/views/form/FormDefaultAction.vue')
+      }
+    ]
+  },
+  {
     path: '/element-ui',
     name: 'ElementUI',
     component: () => import(/* webpackChunkName: "element-ui" */ '@/views/ElementUI.vue'),
@@ -21,9 +33,19 @@ const routes = [
         component: () => import(/* webpackChunkName: "upload" */ '@/views/form/Upload.vue')
       },
       {
+        path: 'password',
+        name: 'Password',
+        component: () => import(/* webpackChunkName: "password" */ '@/views/form/Password.vue')
+      },
+      {
         path: 'select',
         name: 'Select',
         component: () => import(/* webpackChunkName: "select" */ '@/views/form/Select.vue')
+      },
+      {
+        path: 'dyn-input',
+        name: 'DynInput',
+        component: () => import(/* webpackChunkName: "dyn-input" */ '@/views/form/DynInput.vue')
       },
       {
         path: 'cascader2',
@@ -38,7 +60,7 @@ const routes = [
       {
         path: 'scrollbar',
         name: 'Scrollbar',
-        component: () => import(/* webpackChunkName: "scrollbar" */ '@/views/Scrollbar.vue')
+        component: () => import(/* webpackChunkName: "scrollbar" */ '@/views/scrollbar/Scrollbar.vue')
       },
       {
         path: 'img-preview',
@@ -51,21 +73,6 @@ const routes = [
         component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/Tree.vue')
       },
       {
-        path: 'pdf',
-        name: 'Pdf',
-        component: () => import(/* webpackChunkName: "pdf" */ '@/views/pdf/Pdf.vue')
-      },
-      {
-        path: 'pdf2',
-        name: 'Pdf2',
-        component: () => import(/* webpackChunkName: "pdf2" */ '@/views/pdf/Pdf2.vue')
-      },
-      {
-        path: 'wang-editor',
-        name: 'WangEditor',
-        component: () => import(/* webpackChunkName: "wang-editor" */ '@/views/wang-editor/WangEditor.vue')
-      },
-      {
         path: 'sku',
         name: 'Sku',
         component: () => import(/* webpackChunkName: "sku" */ '@/views/sku/Sku.vue')
@@ -76,11 +83,6 @@ const routes = [
         component: () => import(/* webpackChunkName: "sku2" */ '@/views/sku/Sku2.vue')
       },
       {
-        path: 'ewm',
-        name: 'Ewm',
-        component: () => import(/* webpackChunkName: "ewm" */ '@/views/ewm/Ewm.vue')
-      },
-      {
         path: 'base-table',
         name: 'BaseTable',
         component: () => import(/* webpackChunkName: "base-table" */ '@/views/table/BaseTable.vue')
@@ -89,6 +91,11 @@ const routes = [
         path: 'transition',
         name: 'Transition',
         component: () => import(/* webpackChunkName: "transition" */ '@/views/transition/Transition.vue')
+      },
+      {
+        path: 'tabs',
+        name: 'Tabs',
+        component: () => import(/* webpackChunkName: "tabs" */ '@/views/tabs/Tabs.vue')
       }
     ]
   }
