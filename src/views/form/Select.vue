@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-select v-model="value" placeholder="请选择">
+    <el-select v-model="value" placeholder="请选择" @change="handleSelectChange">
       <el-option-group
         v-for="group in options"
         :key="group.label"
@@ -59,6 +59,11 @@ export default {
         }
       ],
       value: '北京'
+    }
+  },
+  methods: {
+    handleSelectChange(value) {
+      console.log(value)
     }
   }
 }

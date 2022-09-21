@@ -1,0 +1,132 @@
+
+$cf: #fff;
+$ce: #eee;
+$cc: #ccc;
+$c9: #999;
+$c6: #666;
+$c3: #333;
+$c0: #000;
+// 主色theme
+$c-one: #2988f2;
+// 提示色
+$c-two: #f8b551;
+// 提示色2
+$c-three: #ff4141;
+// 背景底色
+$c-four: #f7f7f7;
+// 文字大小
+$text-primary: #666;
+$text-regular: #999;
+$color-primary: #2988f2;
+$color-regular: #f8b551;
+$color-danger: #ff4141;
+$small: 12px;
+$base: 14px;
+$medium: 16px;
+$big: 24px;
+
+// 主题颜色
+$colorPrimary: #2988f2;
+$colorPeacockBlue: #33cfc2;
+$colorBlack: #333333;
+$colorWhite: #ffffff;
+$colorGrey: #999999;
+$colorGray: #666666;
+$colorLightGrey: #f4faff;
+$colorRed: #ff3a3a;
+$colorGreen: #4cd964;
+$colorYellow: #fcf448;
+$colorOrange: #ffb618;
+$colorShallowOrange: #fef2dd;
+$colorDarkGray: #cccccc;
+$colorDarkerGray: #eeeeee;
+$colorGrayBg: #f4f4f4;
+$colorWhiteBlue:#cbe7ff;
+// 边框颜色
+$colorBorder: #dddddd;
+// 首页统计模块背景颜色
+$colorPlain: #f3faff;
+$colorOpcityOrange: #fff8f3;
+$colorOpcityPink: #fff5f8;
+$colorOpcityPurple: #f5f6ff;
+$colorOpcityBlue: #e8feff;
+// 首页统计数字颜色
+$colorDarkBlur: #3045ff;
+$colorDarkOrange: #ff8e3a;
+$colorPink: #ff2b6b;
+$coloeLightBlue: #13cee4;
+$colorAzure: #0ee7d5;
+// 首页政策图标颜色
+$colorPolicyRed: #ff7575;
+$colorPolicyYellow: #ffc23f;
+$colorPolicyBlue: #3e97f9;
+$colorPolicyGreen: #72daca;
+$colorPolicyPurple: #d287ff;
+$colorDarkGray:#cccccc;
+$colorSkyBlue:#76AFEE;
+// 证书类型颜色
+$colorCertOrange: #ffb20c;
+$colorCertPurple: #a729ff;
+$colorCertGreen: #1addbf;
+$colorCertBlue: $colorPrimary;
+$colorCertPink: #ff29b1;
+
+
+// 字体
+$fontFamilyBold: "PingFang-SC-Bold";
+$fontFamilyMedium: "PingFang-SC-Medium";
+
+$fontSizeMini: 12px;
+$fontSizeSmall: 20px;
+$fontSizeLittle: 22px;
+$fontSizeDefault: 24px;
+$fontSizeMedium: 26px;
+$fontSizeBig: 28px;
+$fontSizeLarge: 32px;
+$fontSizeOversized: 38px;
+$fontSizeText: 18px;
+
+$fontWeightLighter: lighter;
+$fontWeightDefault: normal;
+$fontWeightBold: bold;
+$fontWeightBolder: bolder;
+
+$fontStyleDefault: normal;
+$fontStyleItalic: italic;
+$fontStyleOblique: oblique;	
+
+// 边距
+$spaceMini: 5px;
+$spaceSmall: 10px;
+$spaceTop: 16px;
+$spaceMedium: 15px;
+$spaceDefault: 20px;
+$spaceMediumLarge: 25px;
+$spaceLarge: 30px;
+$spaceOverSize: 40px;
+
+// 内边距
+$innerPaddingTop:150px;
+$innerPaddingRight:17px;
+$innerPaddingbottom:106px;
+
+// 图片尺寸
+$imgSizeSmall: 40px;
+$imgSizeDefault: 50px;
+$imgSizeLarge: 80px;
+
+// 圆角
+$borderRadiusSmall: 4px;
+$borderRadiusDefaule: 10px;
+$borderRadiusLarge: 12px;
+$borderRadiusCircle: 50%;
+
+// 高度
+$minHeight:1200px;
+
+// 商标法律状态
+$trademarkStateNameValid: #76afee;
+$trademarkStateNameApply: #36cbcb;
+$trademarkStateNameReview: #fac074;
+$trademarkStateNameReject: #a47979;
+$trademarkStateNameInvalid: #797979;

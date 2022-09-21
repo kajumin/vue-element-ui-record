@@ -1,0 +1,351 @@
+@import './variables.scss';
+// 百分比
+.width100 {
+	width: 100%;
+} 
+.height100 {
+	height: 100%;
+}
+.width-onehalf {
+	width: 50%;
+}
+.width-quarter {
+	width: 25%;
+}
+.width-onefifth {
+	width: 20%;
+}
+// 文字颜色
+// text-color-#(df/white/orange/primary/gray)
+// df: $colorBlack #333333 默认颜色
+// gray: $colorGray #666666 灰色
+// grey: $colorGrey #999999;
+// dark-gray: $colorDarkGray #cccccc;
+// darker-gray: $colorDarkerGray #eeeeee;
+// white: $colorWhite #ffffff 白色
+
+// primary: $colorPrimary #2988f2; 主题色
+// danger: $colorRed: #ff3a3a;
+// blue: $colorPeacockBlue: #33cfc2;
+// yellow: $colorYellow: #fcf448;
+// green: $colorGreen: #4cd964;
+// orange: $colorOrange #ffb618 橙色
+$text-colors: (
+	'df': $colorBlack,
+	'gray': $colorGray,
+	'grey': $colorGrey,
+	'dark-gray': $colorDarkGray,
+	'darker-gray': $colorDarkerGray,
+	'white': $colorWhite,
+	'primary': $colorPrimary,
+	'danger': $colorRed,
+	'blue': $colorPeacockBlue,
+	'yellow': $colorYellow,
+	'green': $colorGreen,
+	'orange': $colorOrange
+);
+@each $key, $val in $text-colors {
+	.text-color-#{$key} {
+		color: $val;
+	}
+}
+
+// 背景颜色
+// bg-color-*(default/primary/gray/white)
+// default 默认颜色 #f4faff;
+// df: $colorBlack #333333 默认颜色
+// gray: $colorGray #666666 灰色
+// grey: $colorGrey #999999;
+// dark-gray: $colorDarkGray #cccccc;
+// darker-gray: $colorDarkerGray #eeeeee;
+// white: $colorWhite #ffffff 白色
+
+// primary: $colorPrimary #2988f2; 主题色
+// danger: $colorRed: #ff3a3a;
+// blue: $colorPeacockBlue: #33cfc2;
+// yellow: $colorYellow: #fcf448;
+// green: $colorGreen: #4cd964;
+// orange: $colorOrange #ffb618 橙色
+$bg-colors: (
+	'default': $colorLightGrey,
+	'df': $colorBlack,
+	'gray': $colorGray,
+	'grey': $colorGrey,
+	'dark-gray': $colorDarkGray,
+	'darker-gray': $colorDarkerGray,
+	'white': $colorWhite,
+	'primary': $colorPrimary,
+	'danger': $colorRed,
+	'blue': $colorPeacockBlue,
+	'yellow': $colorYellow,
+	'green': $colorGreen,
+	'orange': $colorOrange
+);
+@each $key, $val in $bg-colors {
+	.bg-color-#{$key} {
+		background-color: $val!important;;
+	}
+}
+
+// 按钮颜色
+// btn-*(success/warning/fail/info)
+// primary 主题颜色
+// success 成功按钮颜色
+// warning: 警告按钮颜色
+// danger: 失败按钮颜色
+// info: 普通按钮颜色
+// white: 白色按钮颜色
+$btn-colors: (
+	'primary': $colorPrimary,
+	'success': $colorGreen,
+	'warning': $colorOrange,
+	'danger': $colorRed,
+	'info': $colorGrey,
+	'white': $colorWhite
+);
+@each $key, $val in $btn-colors {
+	.btn-#{$key} {
+		background-color: $val;
+	}
+}
+
+// 状态
+// state-#(success/warning/fail/info)
+// success 成功状态颜色
+// warning: 警告状态颜色
+// fail: 失败状态颜色
+// info: 提示状态颜色
+$state-colors: (
+	'success': $colorGreen,
+	'warning': $colorOrange,
+	'fail': $colorRed,
+	'info': $colorGrey
+);
+@each $key, $val in $state-colors {
+	.state-#{$key} {
+		color: $val;
+	}
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.overflow-auto {
+	overflow: auto;
+}
+
+// 边框 color: #dddddd;
+.border-default {
+	border: 1px solid $colorBorder;
+}
+
+.border-bottom-df {
+	border-bottom: 1px solid $colorBorder;
+}
+
+.border-top-df {
+	border-top: 1px solid $colorBorder;
+}
+
+.border-left-df {
+	border-left: 1px solid $colorBorder;
+}
+
+.border-right-df {
+	border-right: 1px solid $colorBorder;
+}
+
+// 文本
+// 粗体字号
+.text-bold {
+	font-weight: $fontWeightBold;
+}
+
+// 文本溢出省略号
+// single 单行溢出隐藏
+// multi 多行溢出隐藏
+.text-single-line-ellipsis {
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.text-one-line-ellipsis {
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.text-multi-line-ellipsis {
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+// 属性fonst-size 类名text-(xs/sm/lt/df/md/big/lg/os)
+// xs: 12px;
+// sm: 20px;
+// lt: 22px;
+// df: 24px;
+// md: 26px;
+// big: 28px;
+// lg: 32px;
+// os: 38px;
+// tx: 18px
+$font-size: (
+	'text-xs': $fontSizeMini,
+	'text-sm': $fontSizeSmall,
+	'text-lt': $fontSizeLittle,
+	'text-df': $fontSizeDefault,
+	'text-md': $fontSizeMedium,
+	'text-big': $fontSizeBig,
+	'text-lg': $fontSizeLarge,
+	'text-os': $fontSizeOversized,
+	'text-tx': $fontSizeText
+);
+@each $key, $value in $font-size {
+  .#{$key} {
+    font-size: $value;
+  }
+}
+// 属性margin 或者 padding
+// 类名margin marign-*(left/right/top/bottom)-*(xs/sm/md/df/lg/os)  padding(类似)
+// xs: 5px;
+// sm: 10px;
+// md: 15px;
+// df: 20px;
+// lg: 30px;
+// os: 40px;
+$margin-padding: ('xs': $spaceMini, 'sm': $spaceSmall, 'md': $spaceMedium, 'df': $spaceDefault, 'ml': $spaceMediumLarge, 'lg': $spaceLarge, 'os': $spaceOverSize);
+@each $key, $value in $margin-padding {
+  .margin-#{$key} {
+    margin: $value;
+  }
+  .margin-top-#{$key} {
+    margin-top: $value;
+  }
+  .margin-bottom-#{$key} {
+    margin-bottom: $value;
+  }
+  .margin-left-#{$key} {
+    margin-left: $value;
+  }
+  .margin-right-#{$key} {
+    margin-right: $value;
+  }
+  .margin-lr-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .margin-tb-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .padding-#{$key} {
+    padding: $value;
+  }
+  .padding-top-#{$key} {
+    padding-top: $value;
+  }
+  .padding-bottom-#{$key} {
+    padding-bottom: $value;
+  }
+  .padding-left-#{$key} {
+    padding-left: $value;
+  }
+  .padding-right-#{$key} {
+    padding-right: $value;
+  }
+  .padding-lr-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .padding-tb-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+// flex 布局
+.flex {
+  display: flex;
+}
+// 属性flex 类名: flex*(如: flex1)  1-3
+@for $i from 1 through 3 {
+  .flex-#{$i} {
+    flex: $i;
+    }
+}
+// 属性text-align 类名: text-(left/center/right)
+$text-align: left, center, right;
+@each $value in $text-align {
+  .text-#{$value} {
+    text-align: $value;
+  }
+}
+
+.flex-direction {
+	flex-direction: column;
+}
+.flex-row-reverse {
+	flex-direction: row-reverse;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.flex-shrink {
+	flex-shrink: 0;
+}
+// 属性align-items 类型align-*(如align-start)
+$align-items: ('align-start': flex-start, 'align-center': center, 'align-end': flex-end, 'align-between':  space-between, 'align-stretch':  stretch);
+@each $key, $value in $align-items {
+  .#{$key} {
+    align-items: $value;
+  }
+}
+// 属性align-self 类型self-*(如self-start)
+$align-self: ('self-start': flex-start, 'self-center': center, 'self-end': flex-end, 'self-stretch':  stretch);
+@each $key, $value in $align-self {
+  .#{$key} {
+    align-self: $value;
+  }
+}
+// 属性justify-content 类名justify-*(如: justify-start)
+$justify-content: ('justify-start': flex-start, 'justify-end': flex-end, 'justify-center': center, 'justify-between':  space-between, 'justify-around': space-around);
+@each $key, $value in $justify-content {
+  .#{$key} {
+    justify-content: $value;
+  }
+}
+.border-box {
+	box-sizing: border-box;
+}
+.text-indent {
+  text-indent: 2em;
+}
+.hidden {
+  display: none;
+}
+.pos-re {
+  position: relative;
+}
+@mixin expand-range($top: -10px, $right: $top, $bottom: $top, $left: $top, $position: relative) {
+  position: $position;
+  &:after {
+    content: '';
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+  }
+}
+$expand-range: ('expand-sm': -5px, 'expand-df': -10px, 'expand-md': -15px, 'expand-lg': -20px);
+@each $key, $value in $expand-range {
+  .#{$key} {
+    @include expand-range($top: $value)
+  }
+}

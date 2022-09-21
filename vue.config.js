@@ -5,6 +5,13 @@ const webpackBundleAnalyzer = require('webpack-bundle-analyzer')
 console.log(webpackBundleAnalyzer)
 // 需要gzip压缩的文件后缀
 // const productionGzipExtensions = ['js', 'css']
+
+const externals = {
+  vue: 'vue',
+  'vue-router': 'VueRouter',
+  vuex: 'Vuex',
+  axios: 'axios'
+}
 const cdn = {
   // 开发环境
   dev: {
@@ -57,22 +64,8 @@ const config = {
     })
   },
   configureWebpack: (config) => {
-    // if (isProd) {
-    //   config.plugins.push(
-    //     new CompressionWebpackPlugin({
-    //       test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
-    //       threshold: 8192,
-    //       minRatio: 0.8
-    //     })
-    //   )
-    // }
     if (isProd) {
-      config.externals = {
-        vue: 'vue',
-        'vue-router': 'VueRouter',
-        vuex: 'Vuex',
-        axios: 'axios'
-      }
+      config.externals = externals
     }
   }
 }

@@ -1,0 +1,8 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; }
+html, body, #app, #app > .el-container {
+  height: 100%;
+}
+body {
+  color: #333;
+}
+ul { padding: 0; }

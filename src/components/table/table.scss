@@ -1,0 +1,12 @@
+.pagination-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  .pagination-wrap-left {
+    flex: 1;
+  }
+  .pagination-wrap-right {
+    margin-right: 10px;
+  }
+}

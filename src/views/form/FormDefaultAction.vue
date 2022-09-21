@@ -25,7 +25,7 @@
     <el-popconfirm title="这是一段内容确定删除吗？" @confirm="handleComfirm">
       <el-button slot="reference">删除</el-button>
     </el-popconfirm>
-    <el-input type="number" class="clear-number-input" />
+
     <el-form :model="userForm" :rules="formRules" ref="user-form">
       <el-form-item prop="user_name">
         <el-input v-model="userForm.user_name" placeholder="请输入用户名" />
@@ -49,12 +49,12 @@
       :row-class-name="tableRowClassName"
     >
       <el-table-column type="selection" reserve-selection></el-table-column>
-      <el-table-column prop="name"></el-table-column>
-      <el-table-column prop="date"></el-table-column>
-      <el-table-column prop="address"></el-table-column>
-      <el-table-column>
-        <template>
-          <el-input ref="input-ref" />
+      <el-table-column prop="name" label="姓名"></el-table-column>
+      <el-table-column prop="date" label="日期"></el-table-column>
+      <el-table-column prop="address" label="地址"></el-table-column>
+      <el-table-column label="年龄">
+        <template slot-scope="{row}">
+          <el-input ref="input-ref" v-model="row.age" />
         </template>
       </el-table-column>
     </el-table>
@@ -141,15 +141,12 @@ export default {
       console.log('comfirm')
     },
     handleSubmitForm() {
-      this.$refs['user-form'].validateField(
-        ['user_name', 'password'],
-        (valid) => {
-          console.log(valid)
-          if (!valid) {
-            console.log('发送请求')
-          }
+      this.$refs['user-form'].validate((valid) => {
+        console.log(valid)
+        if (!valid) {
+          console.log('发送请求')
         }
-      )
+      })
     },
     handleSelect(data) {
       console.log(data)

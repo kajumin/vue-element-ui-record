@@ -3,6 +3,8 @@
     <el-form>
       <el-form-item label="所在地区" label-width="120px">
         <el-cascader
+          ref="region"
+          :key="region"
           :show-all-levels="true"
           :props="companyRegion"
           v-model="companyForm.company_region"
@@ -19,6 +21,7 @@ export default {
   data() {
     let rid = 0
     return {
+      region: 1,
       companyForm: {
         company_region: []
       },
@@ -47,15 +50,17 @@ export default {
   },
   created() {
     // 设置默认值, 需要提前获取到数据
-    this.companyForm.company_region = [1, 2, 3]
+    // this.companyForm.company_region = [1, 2, 3]
     // 异步接口获取回来数据再赋值, 无效
     setTimeout(() => {
       this.companyForm.company_region = [1, 2, 3]
+      // 通过改变key值可以强制刷新
+      this.region++
+      // this.$nextTick(() => {
+      //   this.$forceUpdate()
+      // })
       // this.companyRegion.lazyLoad({ data: { value: 1 } }, Promise.resolve)
     }, 1000)
-  },
-  mounted() {
-    console.log('mounted')
   }
 }
 </script>

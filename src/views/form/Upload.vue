@@ -1,16 +1,18 @@
 <template>
-  <div class="upload">
-    <el-form v-model="addCertForm">
+  <div class="upload-wrap">
+    <el-form v-model="formData">
       <el-form-item
         class="fix-update-upload"
         label="附件预览"
         label-width="104px"
       >
         <el-upload
+          ref="add-upload"
           action="https://jsonplaceholder.typicode.com/posts/"
           list-type="picture-card"
-          :file-list="addCertForm.updateFileList"
+          :file-list="formData.updateFileList"
           :on-change="handleFileChange"
+          :on-remove="handleRemove"
           :auto-upload="false"
         >
           <i class="el-icon-plus"></i>
@@ -23,7 +25,8 @@
         <el-button size="medium" @click="submitForm">上传</el-button>
       </el-form-item>
     </el-form>
-    <img class="show-image" :src="imageURI">
+    <img class="show-image" :src="formData.imageURI" />
+    <el-button @click="clearFiles">清除</el-button>
   </div>
 </template>
 <script>
@@ -32,53 +35,55 @@ import { uploadToQiniu, getQNToken } from '@/api/upload.js'
 export default {
   data() {
     return {
-      addCertForm: {
+      formData: {
         avatar: '',
-        updateFileList: [
-          {
-            url:
-              'https://pic2.zhimg.com/v2-262af01c10ca972cd8cd4ab3b63a3d41_540x450.jpeg'
-          }
-        ]
-      },
-      token: '',
-      key: null,
-      imageURI: ''
+        updateFileList: [],
+        imageURI: '',
+        token: ''
+      }
     }
   },
   created() {
     // console.log('upload')
-    console.log(config.qiniuDomain)
+    console.log(config)
+    setTimeout(() => {
+      this.formData.updateFileList.push({
+        url:
+          'https://pic2.zhimg.com/v2-262af01c10ca972cd8cd4ab3b63a3d41_540x450.jpeg'
+      })
+    }, 2000)
   },
   methods: {
+    clearFiles() {
+      this.$refs['add-upload'].clearFiles()
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList)
+      console.log(this.formData.updateFileList)
+    },
     handleFileChange(file) {
       console.log(file)
       this.file = file.raw
+      console.log(this.formData.updateFileList)
     },
     submitForm() {
-      // 如何生成预览图，相信不用再说了吧
-      // 如何生成`files`，也不用我说了吧
-      // `sendRequest`是我们自己封的请求API，向后端请求key和token
       getQNToken().then((res) => {
         console.log(res)
         if (res.code === 0) {
           console.log('获取到token')
-          this.token = res.data.token
-          uploadToQiniu(config.qiniuDomain, res.data.token, this.file).then((res) => {
-            console.log(res)
-            if (res.key) {
-              this.imageURI = config.qiniuDomain + res.key
+          this.formData.token = res.data.token
+          uploadToQiniu(config.qiniuDomain, res.data.token, this.file).then(
+            (res) => {
+              console.log(res)
+              if (res.key) {
+                this.imageURI = config.qiniuDomain + res.key
+              }
             }
-          })
+          )
         }
       })
     }
   }
 }
 </script>
-<style scoped lang="scss">
-.upload {
-  width: 800px;
-  margin: auto;
-}
-</style>
+<style scoped lang="scss"></style>
